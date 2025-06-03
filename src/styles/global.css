@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./typography.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -110,11 +111,102 @@
 	--sidebar-ring: oklch(0.556 0 0);
 }
 
+@theme {
+	--breakpoint-xs: 30rem;
+	--font-sans: "Switzer", sans-serif;
+}
+
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
 	}
+
+	html {
+		background-color: var(--background);
+	}
+
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background text-foreground font-sans;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-medium;
+	}
+
+	h1 {
+		@apply text-4xl leading-tight font-medium;
+	}
+
+	h2 {
+		@apply text-2xl leading-snug font-medium;
+	}
+
+	h3 {
+		@apply text-xl font-medium;
+	}
+
+	h4 {
+		@apply text-lg font-medium;
+	}
+
+	p {
+		@apply text-base leading-relaxed;
+	}
+
+	p a {
+		@apply text-foreground hover:text-muted-foreground decoration-muted-foreground hover:decoration-foreground underline underline-offset-2 transition-all hover:decoration-2;
+	}
+
+	blockquote {
+		@apply text-foreground my-12 text-center font-medium;
+	}
+
+	blockquote p {
+		@apply text-2xl font-medium;
+	}
+
+	blockquote cite {
+		@apply text-base font-normal not-italic;
+	}
+
+	code {
+		@apply bg-muted rounded px-1 py-0.5 text-sm;
+	}
+
+	pre {
+		@apply bg-muted my-6 overflow-x-auto rounded p-4 text-sm;
+	}
+
+	img {
+		@apply bg-muted;
+	}
+
+	hr {
+		@apply border-muted my-8 border-t;
+	}
+
+	strong {
+		@apply font-semibold;
+	}
+
+	.link-subtle {
+		@apply text-muted-foreground hover:text-foreground/80 transition-colors duration-200;
+	}
+
+	.link-subtle-foreground {
+		@apply text-foreground hover:text-foreground/80 transition-colors duration-200;
+	}
+
+	.font-accent {
+		@apply font-light;
+	}
+
+	.font-manifesto {
+		@apply text-center font-light md:text-lg;
 	}
 }
