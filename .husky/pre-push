@@ -1,1 +1,1 @@
-bun tsc && bun test && bun lint && bun format:check
+bun check
