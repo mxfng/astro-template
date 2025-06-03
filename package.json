@@ -7,22 +7,21 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
+		"serve": "astro preview --host",
 		"tsc": "tsc --noEmit",
 		"format": "bunx prettier . --write",
-		"format:check": "bun x prettier . --check",
-		"lint": "bun x eslint .",
-		"lint:fix": "bun x eslint . --fix",
-		"test": "vitest run",
+		"format:check": "bunx prettier . --check",
+		"lint": "bunx eslint .",
+		"lint:fix": "bunx eslint . --fix",
+		"test": "vitest src",
+		"check": "bun format:check && bun lint && bun tsc",
+		"clean": "rm -rf ./node_modules ./dist",
+		"git:add": "bun check && git add -p",
 		"prepare": "husky install"
 	},
 	"lint-staged": {
-		"*.{js,jsx,ts,tsx}": [
-			"bun x eslint --fix",
-			"bun x prettier --write"
-		],
-		"*.{json,md,css}": [
-			"bun x prettier --write"
-		]
+		"**/*.{js,jsx,ts,tsx}": "bun lint:fix",
+		"**/*.{js,jsx,ts,tsx,css,scss,md,astro}": "bun format:check"
 	},
 	"dependencies": {
 		"@astrojs/react": "^4.3.0",
