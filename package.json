@@ -18,11 +18,11 @@
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
-			"eslint --fix",
-			"prettier --write"
+			"bun x eslint --fix",
+			"bun x prettier --write"
 		],
 		"*.{json,md,css}": [
-			"prettier --write"
+			"bun x prettier --write"
 		]
 	},
 	"dependencies": {
