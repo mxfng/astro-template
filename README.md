@@ -1,48 +1,75 @@
-# Astro Starter Kit: Basics
+# Astro Starter Kit + Some Goodies
 
-```sh
-npm create astro@latest -- --template basics
+This is the starter kit from Astro with a few useful dependencies added for convenience when bootstrapping new static sites. I've added and configured the following:
+
+## Dependencies
+
+- TailwindCSS - flexible expressive inline styling
+- Decap CMS - open source, Git-based content management system
+- ESLint - pretty much a must-have for any JavaScript projects, static analysis
+- Prettier - formatting that works out of the box for most filetypes in these kinds of sites
+
+## Dev Tools
+
+- Vitest - unit testing framework that integrates nicely with Vite
+- Husky - pre-commit hooks to check your code before you yeet it up
+
+## Getting Started
+
+1. Clone this repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Rename the app title in `package.json` (optional)
+4. Remove or overwrite this README (optional)
+5. `rm -rf .git/` and `git init` to initialize a new repository
+6. Make your first commit
+7. Start the development server:
+
+```bash
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Available Scripts
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- `npm run dev` - Start the development server
+- `npm run build` - Build the site for production
+- `npm run preview` - Preview the production build locally
+- `npm run format` - Format all files with Prettier
+- `npm run format:check` - Check if files are properly formatted
+- `npm run lint` - Run ESLint to check for issues
+- `npm run lint:fix` - Fix ESLint issues automatically
+- `npm run test` - Run Vitest tests
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Content Management
 
-## 🚀 Project Structure
+The template includes Decap CMS, an open source, Git-based content management system that adds the `/admin` route that will load a React app to allow authorized users to manage content directly from the deployed website. It provides a user-friendly interface for managing content. To access the CMS:
 
-Inside of your Astro project, you'll see the following folders and files:
+1. Navigate to `/admin` on your deployed site
+2. Configure your authentication provider in `public/admin/config.yml`
+3. Start managing your content through the CMS interface
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## License
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+MIT License
 
-## 🧞 Commands
+Copyright (c) 2025 Max Fung
 
-All commands are run from the root of the project, from a terminal:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
