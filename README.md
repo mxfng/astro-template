@@ -5,7 +5,6 @@ This is the starter kit from Astro with a few useful dependencies added for conv
 ## Dependencies
 
 - TailwindCSS - flexible expressive inline styling
-- Decap CMS - open source, Git-based content management system
 - ESLint - pretty much a must-have for any JavaScript projects, static analysis
 - Prettier - formatting that works out of the box for most filetypes in these kinds of sites
 
@@ -41,14 +40,6 @@ npm run dev
 - `npm run lint` - Run ESLint to check for issues
 - `npm run lint:fix` - Fix ESLint issues automatically
 - `npm run test` - Run Vitest tests
-
-## Content Management
-
-The template includes Decap CMS, an open source, Git-based content management system that adds the `/admin` route that will load a React app to allow authorized users to manage content directly from the deployed website. It provides a user-friendly interface for managing content. To access the CMS:
-
-1. Navigate to `/admin` on your deployed site
-2. Configure your authentication provider in `public/admin/config.yml`
-3. Start managing your content through the CMS interface
 
 ## License
 
