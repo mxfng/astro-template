@@ -32,14 +32,14 @@ npm run dev
 
 ## Available Scripts
 
-- `npm run dev` - Start the development server
-- `npm run build` - Build the site for production
-- `npm run preview` - Preview the production build locally
-- `npm run format` - Format all files with Prettier
-- `npm run format:check` - Check if files are properly formatted
-- `npm run lint` - Run ESLint to check for issues
-- `npm run lint:fix` - Fix ESLint issues automatically
-- `npm run test` - Run Vitest tests
+- `bun dev` - Start the development server
+- `bun run build` - Build the site for production
+- `bun preview` - Preview the production build locally
+- `bun format` - Format all files with Prettier
+- `bun format:check` - Check if files are properly formatted
+- `bun lint` - Run ESLint to check for issues
+- `bun lint:fix` - Fix ESLint issues automatically
+- `bun test` - Run Vitest tests
 
 ## License
 

@@ -1,71 +1,61 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import json from "@eslint/json";
-import markdown from "@eslint/markdown";
-import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
+import globals from "globals";
+import js from "@eslint/js";
+import tseslint from "typescript-eslint";
+import astro from "eslint-plugin-astro";
+import prettier from "eslint-plugin-prettier";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+
+const tsParser = tseslint.parser;
+const astroParser = astro.parser;
 
 export default defineConfig([
-  {
-    ignores: [".vscode/**", "package-lock.json"],
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    plugins: { js },
-    extends: ["js/recommended"],
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    languageOptions: { globals: { ...globals.browser, ...globals.node } },
-  },
-  tseslint.configs.recommended,
-  {
-    files: ["**/*.{jsx,tsx}"],
-    plugins: { react: pluginReact },
-    languageOptions: {
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-      settings: {
-        react: {
-          version: "detect",
-        },
-      },
-    },
-    rules: pluginReact.configs.recommended.rules,
-  },
-  {
-    files: ["**/*.json"],
-    plugins: { json },
-    language: "json/json",
-    extends: ["json/recommended"],
-  },
-  {
-    files: ["**/*.jsonc"],
-    plugins: { json },
-    language: "json/jsonc",
-    extends: ["json/recommended"],
-  },
-  {
-    files: ["**/*.json5"],
-    plugins: { json },
-    language: "json/json5",
-    extends: ["json/recommended"],
-  },
-  {
-    files: ["**/*.md"],
-    plugins: { markdown },
-    language: "markdown/gfm",
-    extends: ["markdown/recommended"],
-  },
-  {
-    files: ["**/*.css"],
-    plugins: { css },
-    language: "css/css",
-    extends: ["css/recommended"],
-  },
+	{
+		languageOptions: {
+			globals: {
+				...globals.browser,
+				...globals.node,
+			},
+		},
+	},
+
+	js.configs.recommended,
+	tseslint.configs.recommended,
+	{
+		plugins: {
+			prettier: prettier,
+		},
+		rules: {
+			"prettier/prettier": "off",
+		},
+	},
+
+	astro.configs.recommended,
+	{
+		plugins: {
+			"jsx-a11y": jsxA11y,
+		},
+		rules: jsxA11y.configs.recommended.rules,
+	},
+	{
+		files: ["**/*.astro"],
+		languageOptions: {
+			parser: astroParser,
+			parserOptions: {
+				parser: tsParser,
+				extraFileExtensions: [".astro"],
+				sourceType: "module",
+				ecmaVersion: "latest",
+				project: "./tsconfig.json",
+			},
+		},
+		rules: {
+			"no-undef": "off",
+			"@typescript-eslint/no-explicit-any": "off",
+		},
+	},
+
+	{
+		ignores: ["dist/**", "**/*.d.ts", ".github/", ".vscode/**", "package-lock.json"],
+	},
 ]);
