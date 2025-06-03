@@ -2,7 +2,7 @@
 
 This is the starter kit from Astro with a few useful dependencies added for convenience when bootstrapping new static sites. I've added and configured the following:
 
-## Dependencies
+## Extra Dependencies
 
 - TailwindCSS - flexible expressive inline styling
 - ESLint - pretty much a must-have for any JavaScript projects, static analysis
