@@ -6,7 +6,6 @@ import tailwindcss from "@tailwindcss/vite";
 import { cjsInterop } from "vite-plugin-cjs-interop";
 
 import react from "@astrojs/react";
-
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
