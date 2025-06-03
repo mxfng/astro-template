@@ -38,34 +38,19 @@ bun dev
 ## Available Scripts
 
 - `bun dev` - Start the development server
-- `bun run build` - Build the site for production
+- `bun build` - Build the site for production
 - `bun preview` - Preview the production build locally
+- `bun serve` - Preview the production build with host access
+- `bun tsc` - Run TypeScript type checking
 - `bun format` - Format all files with Prettier
 - `bun format:check` - Check if files are properly formatted
 - `bun lint` - Run ESLint to check for issues
 - `bun lint:fix` - Fix ESLint issues automatically
 - `bun test` - Run Vitest tests
+- `bun check` - Run format check, lint, and TypeScript check
+- `bun clean` - Remove node_modules and dist directories
+- `bun git:add` - Run checks before staging files
 
-## License
+## Usage
 
-MIT License
-
-Copyright (c) 2025 Max Fung
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+You may clone, re-use, re-write, and re-purpose this template for your projects however you'd like.
