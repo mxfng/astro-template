@@ -13,12 +13,17 @@ This is the starter kit from Astro with a few useful dependencies added for conv
 - Vitest - unit testing framework that integrates nicely with Vite
 - Husky - pre-commit hooks to check your code before you yeet it up
 
+## Prerequisites
+
+- git
+- bun
+
 ## Getting Started
 
 1. Clone this repository
 2. Install dependencies:
    ```bash
-   npm install
+   bun i
    ```
 3. Rename the app title in `package.json` (optional)
 4. Remove or overwrite this README (optional)
@@ -27,7 +32,7 @@ This is the starter kit from Astro with a few useful dependencies added for conv
 7. Start the development server:
 
 ```bash
-npm run dev
+bun dev
 ```
 
 ## Available Scripts
